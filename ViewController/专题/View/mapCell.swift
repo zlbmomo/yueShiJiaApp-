@@ -44,7 +44,7 @@ class mapCell: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource {
     var dataArr = NSMutableArray()
     func loadData(){
         
-        topicTVModel.requestTopicTVData(1, specialtype: 5) { (TVArr, error) in
+        topicTVModel.requestTopicTVData(5,page: 1) { (TVArr, error) in
             if error == nil {
                 self.dataArr.addObjectsFromArray(TVArr!)
                 

@@ -35,11 +35,17 @@ class FocusViewController: BaseViewController,UICollectionViewDelegate,UICollect
         layout.minimumInteritemSpacing = 0
         let contentView = UICollectionView.init(frame: CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64 - 49), collectionViewLayout: layout)
         
+<<<<<<< Updated upstream
         
         //设置默认偏移量
 //        contentView.contentOffset = CGPointMake(SCREEN_W, 0)
         
         
+=======
+        //设置默认偏移量
+//        contentView.contentOffset = CGPointMake(SCREEN_W, 0)
+        
+>>>>>>> Stashed changes
         contentView.backgroundColor = GRAYCOLOR
         //设置按页滚动
         contentView.pagingEnabled = true

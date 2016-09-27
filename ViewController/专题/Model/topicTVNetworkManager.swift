@@ -11,7 +11,7 @@ import Foundation
 
 extension topicTVModel{
     
-    class func requestTopicTVData(page:NSInteger?,specialtype:NSInteger,callBack:(TVArr:[AnyObject]?,error:NSError?)->Void){
+    class func requestTopicTVData(specialtype:NSInteger,page:NSInteger?,callBack:(TVArr:[AnyObject]?,totalPage:NSInteger, error:NSError?)->Void){
         
         BaseRequest.getWithURL(String.init(format: "http://interface.yueshichina.com/?act=app&op=special_programa&special_type=%d&key=efbd1b3105a02ff790b706f66ced4cfc&token=749a036dc06ae8b3a120848995a9f306&client=android&curpage=%d", specialtype,page!), para: nil) { (data, error) in
 //            let str = NSString.init(data: data!, encoding: NSUTF8StringEncoding)!
@@ -22,6 +22,9 @@ extension topicTVModel{
                 let obj = try! NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
                 
                 let dict = obj["datas"] as! NSDictionary
+                
+                
+                let totalpage = dict["page_total"]
                 
                 
                 let dataArray = dict["article_list"] as! [AnyObject]
@@ -51,12 +54,12 @@ extension topicTVModel{
                 
                 
                 dispatch_async(dispatch_get_main_queue(), { 
-                    callBack(TVArr: array as [AnyObject], error: nil)
+                    callBack(TVArr: array as [AnyObject], totalPage: totalpage as! NSInteger, error: nil)
                 })
                 
             }else{
                 dispatch_async(dispatch_get_main_queue(), { 
-                    callBack(TVArr: nil, error: error)
+                    callBack(TVArr: nil, totalPage: nil, error: error)
                 })
             }
         }

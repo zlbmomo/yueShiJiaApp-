@@ -18,6 +18,9 @@ class TvCell: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource {
     weak var delegate:PushViewControllerDelegate?
     
     
+    var page = 1
+    
+    
     
     lazy var tableView:UITableView = {
         
@@ -33,6 +36,39 @@ class TvCell: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+        
+        
+        tableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
+            
+            self.page = 1
+            self.loadData()
+            
+        })
+        
+        
+        tableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+            
+            
+            self.page += 1
+            
+            
+            if self.page > 2{
+                tableView.mj_footer.endRefreshing()
+                return
+            }
+            self.loadData()
+        })
+        
+        
+        
+        
+        
+        //进入时就直接下拉刷新展示第一页数据
+        tableView.mj_header.beginRefreshing()
+        
+
         
         
         return tableView
@@ -52,6 +88,8 @@ class TvCell: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource {
     
     var dataArr = NSMutableArray()
     
+    var totalPage:NSInteger
+    
     
     func loadData(){
 //        BaseRequest.getWithURL("http://interface.yueshichina.com/?act=app&op=special_programa&special_type=1&key=efbd1b3105a02ff790b706f66ced4cfc&token=749a036dc06ae8b3a120848995a9f306&client=android&curpage=1", para: nil) { (data, error) in
@@ -60,21 +98,69 @@ class TvCell: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource {
 //        }
         
         
-        topicTVModel.requestTopicTVData(1,specialtype: 1) { (TVArr, error) in
-            
+        
+        
+        topicTVModel.requestTopicTVData(1, page: self.page) { (TVArr, totalPage, error) in
             if error == nil {
+                
+                
+                if self.page == 1
+                {
+                    self.dataArr.removeAllObjects()
+                }
                 self.dataArr.addObjectsFromArray(TVArr!)
                 
-//                print(self.dataArr)
+                //                print(self.dataArr)
+                
+                
+                self.totalPage = totalPage
+                
+                print(self.totalPage)
                 
                 
                 self.tableView.reloadData()
+                
+                //关闭加载状态
+                self.tableView.mj_header.endRefreshing()
+                self.tableView.mj_footer.endRefreshing()
+                
+                
+                
             }
             
         }
+
+        }
         
-        
-    }
+//        
+//        topicTVModel.requestTopicTVData(1,page: self.page) { (TVArr, error) in
+//            
+//            if error == nil {
+//                
+//                
+//                if self.page == 1
+//                {
+//                    self.dataArr.removeAllObjects()
+//                }
+//                self.dataArr.addObjectsFromArray(TVArr!)
+//                
+////                print(self.dataArr)
+//                
+//                
+//                self.tableView.reloadData()
+//                
+//                //关闭加载状态
+//                self.tableView.mj_header.endRefreshing()
+//                self.tableView.mj_footer.endRefreshing()
+//                
+//
+//                
+//            }
+//            
+//        }
+//        
+//        
+//    }
     
     
     //MARK:-UITableView协议方法

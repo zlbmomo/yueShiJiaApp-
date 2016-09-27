@@ -48,7 +48,7 @@ class bangDanCell: UICollectionViewCell,UITableViewDelegate,UITableViewDataSourc
     
     func loadData(){
         
-        topicTVModel.requestTopicTVData(1, specialtype: 2) { (TVArr, error) in
+        topicTVModel.requestTopicTVData(2,page: 1) { (TVArr, error) in
             
             
             

@@ -44,7 +44,7 @@ class renWenCell: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource
     
     func loadData(){
         
-        topicTVModel.requestTopicTVData(1, specialtype: 4) { (TVArr, error) in
+        topicTVModel.requestTopicTVData(4,page: 1) { (TVArr, error) in
         
             if error == nil {
                 self.dataArr.addObjectsFromArray(TVArr!)

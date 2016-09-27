@@ -230,16 +230,12 @@ class FirstViewController: BaseViewController,UITableViewDelegate,UITableViewDat
                     
                     self.createUI()
                     
-                    
-                    
-
                 
                 }
                 
                 self.oArr.addObjectsFromArray(oneArr!)
     
-                
-                
+        
                 self.tableView.reloadData()
                 
                 

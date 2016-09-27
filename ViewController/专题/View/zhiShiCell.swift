@@ -47,7 +47,7 @@ class zhiShiCell: UICollectionViewCell,UITableViewDelegate,UITableViewDataSource
     
     func loadData(){
         
-        topicTVModel.requestTopicTVData(1, specialtype: 3) { (TVArr, error) in
+        topicTVModel.requestTopicTVData(3,page: 1) { (TVArr, error) in
          
             if error == nil{
                 
