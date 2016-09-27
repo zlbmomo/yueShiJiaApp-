@@ -129,6 +129,12 @@
 		BCEB47A11D93FDCB0004B32C /* fiveCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEB479F1D93FDCB0004B32C /* fiveCell.xib */; };
 		BCEB47A41D9400B60004B32C /* detailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEB47A21D9400B60004B32C /* detailCell.swift */; };
 		BCEB47A51D9400B60004B32C /* detailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEB47A31D9400B60004B32C /* detailCell.xib */; };
+		BCEF7C1C1D9A8D4000388135 /* shopModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF7C1B1D9A8D4000388135 /* shopModels.swift */; };
+		BCEF7C1E1D9A92BC00388135 /* shopNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF7C1D1D9A92BC00388135 /* shopNetworkManager.swift */; };
+		BCEF7C221D9A9B9E00388135 /* queryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF7C201D9A9B9E00388135 /* queryCell.swift */; };
+		BCEF7C231D9A9B9E00388135 /* queryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEF7C211D9A9B9E00388135 /* queryCell.xib */; };
+		BCEF7C261D9AA84600388135 /* channelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEF7C241D9AA84600388135 /* channelCell.swift */; };
+		BCEF7C271D9AA84600388135 /* channelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCEF7C251D9AA84600388135 /* channelCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -308,6 +314,12 @@
 		BCEB479F1D93FDCB0004B32C /* fiveCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = fiveCell.xib; sourceTree = "<group>"; };
 		BCEB47A21D9400B60004B32C /* detailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailCell.swift; sourceTree = "<group>"; };
 		BCEB47A31D9400B60004B32C /* detailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = detailCell.xib; sourceTree = "<group>"; };
+		BCEF7C1B1D9A8D4000388135 /* shopModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shopModels.swift; sourceTree = "<group>"; };
+		BCEF7C1D1D9A92BC00388135 /* shopNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shopNetworkManager.swift; sourceTree = "<group>"; };
+		BCEF7C201D9A9B9E00388135 /* queryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = queryCell.swift; sourceTree = "<group>"; };
+		BCEF7C211D9A9B9E00388135 /* queryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = queryCell.xib; sourceTree = "<group>"; };
+		BCEF7C241D9AA84600388135 /* channelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = channelCell.swift; sourceTree = "<group>"; };
+		BCEF7C251D9AA84600388135 /* channelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = channelCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -692,6 +704,8 @@
 		BCEB476B1D93713A0004B32C /* 店铺 */ = {
 			isa = PBXGroup;
 			children = (
+				BCEF7C191D9A8D0D00388135 /* Model */,
+				BCEF7C1A1D9A8D0D00388135 /* View */,
 				BCEB47761D9371E10004B32C /* ShopViewController.swift */,
 			);
 			path = "店铺";
@@ -757,6 +771,34 @@
 				BCE48AD21D965D3A00CD47B9 /* MyScrollView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		BCEF7C191D9A8D0D00388135 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCEF7C1B1D9A8D4000388135 /* shopModels.swift */,
+				BCEF7C1D1D9A92BC00388135 /* shopNetworkManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BCEF7C1A1D9A8D0D00388135 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCEF7C1F1D9A9B8000388135 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BCEF7C1F1D9A9B8000388135 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				BCEF7C201D9A9B9E00388135 /* queryCell.swift */,
+				BCEF7C211D9A9B9E00388135 /* queryCell.xib */,
+				BCEF7C241D9AA84600388135 /* channelCell.swift */,
+				BCEF7C251D9AA84600388135 /* channelCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -839,10 +881,12 @@
 				BCEB47601D936EEA0004B32C /* 店铺a.png in Resources */,
 				BCEB47611D936EEA0004B32C /* 店铺b.png in Resources */,
 				BC27EA231D98B4F100E3DAB4 /* typeTwoCell.xib in Resources */,
+				BCEF7C231D9A9B9E00388135 /* queryCell.xib in Resources */,
 				BCEB47671D936EEA0004B32C /* 首页b.png in Resources */,
 				BCEB469E1D93698E0004B32C /* Main.storyboard in Resources */,
 				BC27EA581D994D0E00E3DAB4 /* exeTableViewCell.xib in Resources */,
 				BCEB47911D93E2DD0004B32C /* 播放.png in Resources */,
+				BCEF7C271D9AA84600388135 /* channelCell.xib in Resources */,
 				BC27EA3E1D98EC5200E3DAB4 /* topicTVTableViewCell.xib in Resources */,
 				BCEB47A51D9400B60004B32C /* detailCell.xib in Resources */,
 				BCEB47651D936EEA0004B32C /* 购物.png in Resources */,
@@ -857,6 +901,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC27EA401D9900D000E3DAB4 /* playViewController.swift in Sources */,
+				BCEF7C1C1D9A8D4000388135 /* shopModels.swift in Sources */,
 				BCE48AD91D968AB300CD47B9 /* bannerDTViewController.swift in Sources */,
 				BC27EA271D98C14500E3DAB4 /* NavTitleView.swift in Sources */,
 				BCEB47271D936E840004B32C /* JSONHTTPClient.m in Sources */,
@@ -887,6 +932,7 @@
 				BCEB47491D936E840004B32C /* SDWebImageManager.m in Sources */,
 				BCE48AD31D965D3A00CD47B9 /* MyScrollView.swift in Sources */,
 				BC4B50321D9558D6003A10CC /* MJRefreshBackNormalFooter.m in Sources */,
+				BCEF7C221D9A9B9E00388135 /* queryCell.swift in Sources */,
 				BCEB472A1D936E840004B32C /* JSONValueTransformer.m in Sources */,
 				BCEB47711D93715C0004B32C /* BaseViewController.swift in Sources */,
 				BC27EA2B1D98C26B00E3DAB4 /* bangDanCell.swift in Sources */,
@@ -904,6 +950,7 @@
 				BCEB474E1D936E840004B32C /* UIImage+WebP.m in Sources */,
 				BC4B503B1D9558D6003A10CC /* UIView+MJExtension.m in Sources */,
 				BC27EA391D98E6F300E3DAB4 /* topicTVNetworkManager.swift in Sources */,
+				BCEF7C1E1D9A92BC00388135 /* shopNetworkManager.swift in Sources */,
 				BCEB47831D9385FF0004B32C /* HomeNetWorkManager.swift in Sources */,
 				BCEB472C1D936E840004B32C /* MBProgressHUD.m in Sources */,
 				BC4B50291D9558D6003A10CC /* MJRefreshAutoFooter.m in Sources */,
@@ -933,6 +980,7 @@
 				BCE48AE21D96AAC400CD47B9 /* qiuRiCell.swift in Sources */,
 				BC4B50341D9558D6003A10CC /* MJRefreshGifHeader.m in Sources */,
 				BCEB46AC1D936E620004B32C /* BaseRequest.swift in Sources */,
+				BCEF7C261D9AA84600388135 /* channelCell.swift in Sources */,
 				BCEB47471D936E840004B32C /* SDWebImageDownloader.m in Sources */,
 				BCEB47751D9371B60004B32C /* FocusViewController.swift in Sources */,
 				BC4B50311D9558D6003A10CC /* MJRefreshBackGifFooter.m in Sources */,

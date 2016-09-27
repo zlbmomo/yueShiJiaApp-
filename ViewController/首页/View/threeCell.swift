@@ -32,6 +32,10 @@ class threeCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
+        collectionBtn.setTitle("收藏", forState: .Normal)
+        collectionBtn.setTitleColor(UIColor.orangeColor(), forState: .Normal)
     }
     
     @IBAction func priceB(sender: UIButton) {

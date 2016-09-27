@@ -34,7 +34,12 @@ class FocusViewController: BaseViewController,UICollectionViewDelegate,UICollect
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         let contentView = UICollectionView.init(frame: CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64 - 49), collectionViewLayout: layout)
-        contentView.contentOffset = CGPointMake(SCREEN_W, 0)
+        
+        
+        //设置默认偏移量
+//        contentView.contentOffset = CGPointMake(SCREEN_W, 0)
+        
+        
         contentView.backgroundColor = GRAYCOLOR
         //设置按页滚动
         contentView.pagingEnabled = true
@@ -48,11 +53,6 @@ class FocusViewController: BaseViewController,UICollectionViewDelegate,UICollect
         contentView.registerClass(renWenCell.self, forCellWithReuseIdentifier: "renWenCell")
         contentView.registerClass(mapCell.self, forCellWithReuseIdentifier: "mapCell")
         contentView.registerClass(exeCell.self, forCellWithReuseIdentifier: "exeCell")
-//        //注册关注页面cell
-//        contentView.registerClass(AttentionView.self, forCellWithReuseIdentifier: "AttentionView")
-//        //注册推荐cell
-//        contentView.registerClass(RecommendView.self, forCellWithReuseIdentifier: "RecommendView")
-//        contentView.registerClass(NewestView.self, forCellWithReuseIdentifier: "NewestView")
         
         
         //指定数据源代理和操作代理
@@ -109,8 +109,9 @@ class FocusViewController: BaseViewController,UICollectionViewDelegate,UICollect
         //指定代理关系
         titleView.delegate = self
         
+//        titleView.selectedIndex(0)
         
-        titleView.selectedIndex(0)
+        
         self.view.addSubview(titleView)
         
         self.navigationItem.title = "FOOD"
@@ -125,6 +126,8 @@ class FocusViewController: BaseViewController,UICollectionViewDelegate,UICollect
     func didSelectedTitleAtIndex(index: NSInteger) {
         //设置collectionView的偏移量
         self.contentView.contentOffset = CGPointMake(CGFloat(index) * SCREEN_W, 0)
+        
+        
     }
     
 

@@ -43,7 +43,7 @@ class playViewController: UIViewController {
         #else
             
             
-            pvc.view.frame = CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64 - 49)
+            pvc.view.frame = CGRectMake(0, 64, SCREEN_W, SCREEN_H - 64)
             self.view.addSubview(pvc.view)
             pvc.player?.play()
         #endif

@@ -10,6 +10,7 @@ import UIKit
 
 
 
+
 /*声明按钮点击时需要通知其他视图设置偏移量*/
 
 protocol NavTitleViewDelegate:class {
@@ -32,6 +33,9 @@ class NavTitleView: UIView {
     
     
     var selectedIndex = 0
+    
+    
+    
     //声明代理属性，用于存代理对象
     weak var delegate:NavTitleViewDelegate?
     
@@ -93,6 +97,8 @@ class NavTitleView: UIView {
         //通知代理对象执行协议方法
         self.delegate?.didSelectedTitleAtIndex(button.tag - 200)
     }
+    
+    
     //当点击或滚到某一个下标位置时，改变按钮的选中状态
     func selectedIndex(index:NSInteger){
         //先取出上一次选中的按钮，并置为非选中状态
